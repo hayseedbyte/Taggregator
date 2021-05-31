@@ -37,12 +37,9 @@ function generate(){
     words = words.filter(function(el){ return el != '' }); // remove any empty elements
 // ********
 //*******Unique words list generated above
-//Display unique
-        // clean = words.forEach(function(item) {
-        // document.getElementById("wordBox").value += item + " ";
-        // });
 
-//********Tag generation below
+
+// ********Tag generation below
 //********
 
 
@@ -86,6 +83,8 @@ function generate(){
     });
     console.log(outputText);
     document.getElementById("output").value = outputText;
+
+    // show words that weren't used in tags
      let output1 = output.toString()
                  .replace(/ /g,',')
                  .split(",");
@@ -144,9 +143,3 @@ function removeDuplicates(words){
     }
     return out;
 };
-
-// let outTags = document.getElementById("output").value;
-// let uniqueWords = document.getElementById("wordBox").value;
-
-// let outtTags = compare(outTags, uniqueWords);
-// console.log(outtTags);
