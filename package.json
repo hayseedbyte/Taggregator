@@ -1,0 +1,19 @@
+{
+  "name": "taggregator",
+  "version": "1.0.0",
+  "description": "Etsy tag optimizer"
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hayseedbyte/taggregator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hayseedbyte/taggregator/issues"
+  },
+  "homepage": "https://github.com/hayseedbyte/taggregator#readme"
+}
