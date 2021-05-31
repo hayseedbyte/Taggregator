@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/hayseedbyte/taggregator/issues"
   },
-  "homepage": "https://github.com/hayseedbyte/taggregator#readme"
+  "homepage": "https://github.com/hayseedbyte/taggregator#readme",
+  "dependencies": {
+    
+  }
 }
