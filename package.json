@@ -1,7 +1,7 @@
 {
   "name": "taggregator",
   "version": "1.0.0",
-  "description": "Etsy tag optimizer"
+  "description": "Etsy tag optimizer",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
