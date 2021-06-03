@@ -163,7 +163,7 @@ h4 {
   }
   .io {
     max-width: 80vw;
-    display: flex;
+    display: block;
   }
   .donation {
     display: none;
@@ -175,9 +175,10 @@ h4 {
   #input #output #wordBox {
     padding: 0;
     margin: 0;
+    display: block;
   }
   .keywords .tags .unused {
-    display: flex;
+    display: block;
     align-items: stretch;
     justify-content: space-evenly;
   }
