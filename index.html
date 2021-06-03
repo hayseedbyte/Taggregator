@@ -39,7 +39,7 @@
 						<label for="input"><h4>Keywords:</h4></label>
 					</div>
 					<div>
-						<textarea id="input" cols="30" rows="20"></textarea>
+						<textarea id="input" cols="25" rows="13"></textarea>
 					</div>
 					<div>
 						<button type="button" class="gen" onClick="generate()">Generate</button>
@@ -51,12 +51,12 @@
 						<label for="output"><h4>Tags:</h4></label>
 					</div>
 					<div>
-						<textarea id="output" cols="30" rows="20"></textarea>
+						<textarea id="output" cols="25" rows="13"></textarea>
 					</div>
 				</div>
-				<div><h4>Unused Words:</h4>
+				<div class="unused"><h4>Unused Words:</h4>
 					<div>
-						<textarea id="wordBox" cols="30" rows="20"></textarea>
+						<textarea id="wordBox" cols="auto" rows="13"></textarea>
 					</div>
 				</div>
 			</div>
@@ -121,11 +121,16 @@
 					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
 					<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 				</form>
-			<h3 class="disclaimer">Disclaimer</h3>	
-			<hr>
-			<p class="disclaimer">I can't say for sure if it's better for Etsy SEO to use all available characters in your tags or if it's better to keep phrases intact. I've tested it in my own shop (Top 1% Etsy Seller without selling masks) but there are simply too many variables and too many unknowns.</p>
-			<p class="disclaimer"> From reading Etsy's Guide to Search, you shouldn't use a word more than once in your tags and etsy's search algorithm will put words from seperate tags together to match a query.</p>
-			<p class="disclaimer"> But since Etsy doesn't share everything about how the algorithm works, I  make no guarantees or promises as to the effectiveness of this tool. Use at your own risk, your mileage may vary and so on.</p>
+				<hr>
+					<div class="disclaimer-container>" <h3 class="disclaimer-heading">Disclaimer</h3>
+						<p>I can't say for sure if it's better for Etsy SEO to use all available characters in your tags or if it's better
+							to keep phrases intact. I've tested it in my own shop (Top 1% Etsy Seller without selling masks) but there are
+							simply too many variables and too many unknowns.</p>
+						<p> From reading Etsy's Guide to Search, you shouldn't use a word more than once in your tags and etsy's search
+							algorithm will put words from seperate tags together to match a query.</p>
+						<p> But since Etsy doesn't share everything about how the algorithm works, I make no guarantees or promises as to
+							the effectiveness of this tool. Use at your own risk, your mileage may vary and so on.</p>
+					</div>
 		</div>
 	</div>
 	<footer>©2021 Wildbot3D®</footer>
