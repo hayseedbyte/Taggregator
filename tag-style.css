@@ -36,68 +36,6 @@ img {
   padding: 20px;
   grid-column: 1 / 7;
 }
-.chars {
-  position: relative;
-}
-
-.chars .chars-tip {
-  visibility: hidden;
-  background-color: #6cc9d9;
-  color: #fff;
-  text-align: center;
-  position: absolute;
-  z-index: 1;
-  width: 280px;
-  bottom: 100%;
-  left: 15%;
-  margin-left: -140px;
-  border-radius: 6px;
-}
-
-.chars:hover .chars-tip {
-  visibility: visible;
-}
-.chars .chars-tip::after {
-  content: " ";
-  position: absolute;
-  top: 100%; /* At the bottom of the tooltip */
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #6cc9d9 transparent transparent transparent;
-}
-.phrase {
-  position: relative;
-}
-
-.phrase .phrase-tip {
-  visibility: hidden;
-  background-color: #6cc9d9;
-  color: #fff;
-  text-align: center;
-  position: absolute;
-  z-index: 1;
-  width: 280px;
-  bottom: 100%;
-  left: 15%;
-  margin-left: -140px;
-  border-radius: 6px;
-}
-
-.phrase:hover .phrase-tip {
-  visibility: visible;
-}
-.phrase .phrase-tip::after {
-  content: " ";
-  position: absolute;
-  top: 100%; /* At the bottom of the tooltip */
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #6cc9d9 transparent transparent transparent;
-}
 
 button {
   /*  text-decoration: bold;*/
