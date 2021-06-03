@@ -27,7 +27,7 @@
 					<li>If there are words left over that could not fit, they'll be displayed in the "Unused Words" box.</li>
 				</ul>
 			</p>
-			<!-- <p>Pro Tip: Use quotation marks if you want a phrase to be kept as is. <strong>Example: "New York"</strong>.</p> -->
+			<p>Pro Tip: Use quotation marks if you want a phrase to be kept as is. <strong>Example: "New York"</strong>. *Bug* Words in quotation marks will show up in the Unused Words box even when they are used.</p>
 			<div class="chars">Max Characters: <span class="chars-tip">How many characters allowed per tag?</span><input type="number" id="chars" value="20" style="width: 75px;"></div> <div class="phrase"> Max Tags: <span class="phrase-tip">How many tags are available?</span><input type="number" id="phrase" value="13" style="width: 75px;"></div>
 			<div style="padding-top: 15px;">
 				Unwanted Words: 
@@ -53,6 +53,18 @@
 					<div>
 						<textarea id="output" cols="25" rows="13"></textarea>
 					</div>
+					<div class="copy-button">
+						<button class="gen" id="copyTags" type="button" onclick="copyOutput('#output')">Copy</button>
+						<script>
+							function copyOutput() {
+								var copyText = document.getElementById("output");
+								copyText.select();
+								copyText.setSelectionRange(0, 99999)
+								document.execCommand("copy");
+								document.getElementById("copyTags").innerHTML = "Copied!";
+							}
+						</script>
+					</div> 
 				</div>
 				<div class="unused"><h4>Unused Words:</h4>
 					<div>

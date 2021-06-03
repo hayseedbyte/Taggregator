@@ -83,13 +83,6 @@ function generate(){
     });
     console.log(outputText);
     document.getElementById("output").value = outputText;
-    let comma = document.getElementById("output").value;
-    let tagArray = comma.split('\n');
-    tagArray.forEach(item => {
-        const tagString = tagArray.join(item + ', \n')
-        document.getElementById("output").value = tagString.substring(0, tagString.length - 3)
-    }
-    );
     
     //** show words that weren't used in tags
      let output1 = output.toString()
@@ -104,7 +97,14 @@ function generate(){
        clean = unused.forEach(function(item) {
        document.getElementById("wordBox").value += item + "\n";
         });
-
+        
+        let comma = document.getElementById("output").value;
+        let tagArray = comma.split('\n');
+        tagArray.forEach(item => {
+            const tagString = tagArray.join(item + ', \n')
+            document.getElementById("output").value = tagString.substring(0, tagString.length - 3)
+            }
+        );
 };
 //********  main generate function above, other named functions below
 
