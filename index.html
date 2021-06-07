@@ -1,72 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="tag-style.css">
-    <link rel="shortcut icon" type="image/jpg" href="favicon.png"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&family=Source+Code+Pro&display=swap" rel="stylesheet">
-    <title>Etsy Tag Aggregator</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="script.js"></script>
- </head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="tag-style.css">
+	<link rel="shortcut icon" type="image/jpg" href="favicon.png" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&family=Source+Code+Pro&display=swap"
+		rel="stylesheet">
+	<title>Etsy Tag Aggregator</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- <script src="modal-script.js"></script> -->
+	<!-- <link rel="stylesheet" type="text/css" href="modal-style.css"> -->
+</head>
+
 <body>
 	<div class="header">
-		<img src="taggregator.png">
+		<img class="logo" src="taggregator.png">
 	</div>
-	 <div class="container">
+	<div class="container">
 		<div class="app">
 			<h1>Etsy Keyword/Tag Aggregator</h1>
 			<h3>Instructions</h3>
+			<!-- Trigger/Open The Modal -->
+			<button id="myBtn" class="show">Show Me!</button>
+			<!-- The Modal -->
+			<div id="insModal" class="hidden">
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="close">&times;</span>
+					</div>
+					<div class="modal-body">
+						<img class="instructions-img" src="unused2.jpg" alt="Usage intructions">
+					</div>
+				</div>
+			</div>
 			<p class="d-text">
-				<ul>
-					<li>Put your search terms in the "Keywords" box, one per line.</li>
-					<li>Put how many tags you want and how many characters each tag can be. </li>
-					<li>Click "Generate" and your optimized tags will show up in the Tags box. </li>
-					<li>If there are words left over that could not fit, they'll be displayed in the "Unused Words" box.</li>
-				</ul>
+			<ul>
+				<li>Put your search terms in the "Keywords" box, one per line.</li>
+				<li>Put how many tags you want and how many characters each tag can be. </li>
+				<li>Click "Generate" and your optimized tags will show up in the Tags box. </li>
+				<li>If there are words left over that could not fit, they'll be displayed in the "Unused Words" box.
+				</li>
+			</ul>
 			</p>
-			<p>Pro Tip: Use quotation marks if you want a phrase to be kept as is. <strong>Example: "New York"</strong>. *Bug* Words in quotation marks will show up in the Unused Words box even when they are used.</p>
-			<div class="chars">Max Characters:<input type="number" id="chars" value="20" style="width: 75px;"></div> <div class="phrase"> Max Tags: <input type="number" id="phrase" value="13" style="width: 75px;"></div>
-			<div style="padding-top: 15px;">
-				Unwanted Words: 
-				<input type="text" id="unwanted" value="a|at|and|of|the|in|on|an|has|to|it|is|if|this|that|or|by|for|with" size="60" style="width: 600px; height: 30px;">
+			<p>Pro Tip: Use quotation marks if you want a phrase to be kept as is. <strong>Example: "New York"</strong>.
+				*Bug* Words in quotation marks will show up in the Unused Words box even when they are used.</p>
+			<div class="chars">Max Characters:<input type="number" id="chars" value="20" style="width: 75px;"></div>
+			<div class="phrase"> Max Tags: <input type="number" id="phrase" value="13" style="width: 75px;"></div>
+			<div style="padding-top: 15px;"> Unwanted Words: <input type="text" id="unwanted"
+					value="a|at|and|of|the|in|on|an|has|to|it|is|if|this|that|or|by|for|with" size="60"
+					style="width: 600px; height: 30px;">
 			</div>
 			<div class="io">
 				<div class="keywords">
 					<div>
-						<label for="input"><h4>Keywords:</h4></label>
+						<label for="input">
+							<h4>Keywords:</h4>
+						</label>
 					</div>
 					<div>
 						<textarea id="input" cols="25" rows="13"></textarea>
 					</div>
 					<div>
-						<button type="button" class="gen" onClick="generate()">Generate</button>
-						<button type="button" class="gen" onClick="window.location.reload();">Reset</button>
+						<button id="generate" type="button" class="gen" onClick="generate()">Generate</button>
+						<button id="reset" type="button" class="gen" onClick="window.location.reload();">Reset</button>
 					</div>
 				</div>
 				<div class="tags">
 					<div>
-						<label for="output"><h4>Tags:</h4></label>
+						<label for="output">
+							<h4>Tags:</h4>
+						</label>
 					</div>
 					<div>
 						<textarea id="output" cols="25" rows="13"></textarea>
 					</div>
 					<div class="copy-button">
 						<button class="gen" id="copyTags" type="button" onclick="copyOutput('#output')">Copy</button>
-						<script>
-							function copyOutput() {
-								var copyText = document.getElementById("output");
-								copyText.select();
-								copyText.setSelectionRange(0, 99999)
-								document.execCommand("copy");
-								document.getElementById("copyTags").innerHTML = "Copied!";
-							}
-						</script>
-					</div> 
+					</div>
 				</div>
-				<div class="unused"><h4>Unused Words:</h4>
+				<div class="unused">
+					<h4>Unused Words:</h4>
 					<div>
 						<textarea id="wordBox" cols="auto" rows="13"></textarea>
 					</div>
@@ -76,75 +92,51 @@
 		<div class="donation">
 			<h3>Donations</h3>
 			<hr>
-			<p>This tool is free for anyone to use (even though some of you might be my competition ( ಠ_ಠ) ), no ads, no email popups, no tracking cookies. If you find value here and would like to make a small donation, you can do so below. Thanks so much!</p>
+			<p>This tool is free for anyone to use (even though some of you might be my competition ( ಠ_ಠ) ), no ads, no
+				email popups, no tracking cookies. If you find value here and would like to make a small donation, you
+				can do so below. Thanks so much!</p>
 			<h4>Crypto donations can be made to the following addresses:</h4>
-			<strong>BTC: </strong><span name="BTC" id="BTC" class="crypto"> bc1q3jq3x8nllcnk560tg2hfsyg0chc87fsk6n6700</span>
-			<button type="button" onclick="copyToClipboard('#BTC')">Copy</button>
-			<script>
-				function copyToClipboard(element) {
- 				 var $temp = $("<input>");
- 				 $("body").append($temp);
- 				 $temp.val($(element).text()).select();
-				  document.execCommand("copy");
-				  $temp.remove();
-				}
-			</script>
+			<strong>BTC: </strong><span name="BTC" id="BTC" class="crypto">
+				bc1q3jq3x8nllcnk560tg2hfsyg0chc87fsk6n6700</span>
+			<button class="crypto" type="button" onclick="copyToClipboard('#BTC')">Copy</button>
 			<br>
-			<strong>LTC: </strong><span name="LTC" id="LTC" class="crypto"> ltc1q0q5e3wgnlp6qnmvkxg9ytvmgjc2au87n0nj9x5</span>
-			<button type="button" onclick="copyToClipboard('#LTC')">Copy</button>
-			<script>
-				function copyToClipboard(element) {
- 				 var $temp = $("<input>");
- 				 $("body").append($temp);
- 				 $temp.val($(element).text()).select();
-				  document.execCommand("copy");
-				  $temp.remove();
-				}
-			</script>
+			<strong>LTC: </strong><span name="LTC" id="LTC" class="crypto">
+				ltc1q0q5e3wgnlp6qnmvkxg9ytvmgjc2au87n0nj9x5</span>
+			<button class="crypto" type="button" onclick="copyToClipboard('#LTC')">Copy</button>
 			<br>
-			<strong>ETH: </strong><span name="ETH" id="ETH" class="crypto"> 0x4d6437C33B3fE0B05cb0E8A601E10824EbD4c5ca</span>
-			<button type="button" onclick="copyToClipboard('#ETH')">Copy</button>
-			<script>
-				function copyToClipboard(element) {
- 				 var $temp = $("<input>");
- 				 $("body").append($temp);
- 				 $temp.val($(element).text()).select();
-				  document.execCommand("copy");
-				  $temp.remove();
-				}
-			</script>
+			<strong>ETH: </strong><span name="ETH" id="ETH" class="crypto">
+				0x4d6437C33B3fE0B05cb0E8A601E10824EbD4c5ca</span>
+			<button class="crypto" type="button" onclick="copyToClipboard('#ETH')">Copy</button>
 			<br>
 			<strong>DOGE: </strong><span name="DOGE" id="DOGE" class="crypto"> DDWtVtqNnacVorew1kMyAATLTXeNqVsJUS</span>
-			<button type="button" onclick="copyToClipboard('#DOGE')">Copy</button>
-			<script>
-				function copyToClipboard(element) {
- 				 var $temp = $("<input>");
- 				 $("body").append($temp);
- 				 $temp.val($(element).text()).select();
-				  document.execCommand("copy");
-				  $temp.remove();
-				}
-			</script>
+			<button class="crypto" type="button" onclick="copyToClipboard('#DOGE')">Copy</button>
 			<br>
-			<br>	
+			<br>
 			<h4>Or use the button below to donate through PayPal:</h4>
-				<form action="https://www.paypal.com/donate" method="post" target="_top">
-					<input type="hidden" name="hosted_button_id" value="ZTSSWJZQ3U9JN" />
-					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-					<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-				</form>
-				<hr>
-					<div class="disclaimer-container>" <h3 class="disclaimer-heading">Disclaimer</h3>
-						<p>I can't say for sure if it's better for Etsy SEO to use all available characters in your tags or if it's better
-							to keep phrases intact. I've tested it in my own shop (Top 1% Etsy Seller without selling masks) but there are
-							simply too many variables and too many unknowns.</p>
-						<p> From reading Etsy's Guide to Search, you shouldn't use a word more than once in your tags and etsy's search
-							algorithm will put words from seperate tags together to match a query.</p>
-						<p> But since Etsy doesn't share everything about how the algorithm works, I make no guarantees or promises as to
-							the effectiveness of this tool. Use at your own risk, your mileage may vary and so on.</p>
-					</div>
+			<form action="https://www.paypal.com/donate" method="post" target="_top">
+				<input type="hidden" name="hosted_button_id" value="ZTSSWJZQ3U9JN" />
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0"
+					name="submit" title="PayPal - The safer, easier way to pay online!"
+					alt="Donate with PayPal button" />
+				<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+			</form>
+			<hr>
+			<div class="disclaimer-container>" <h3 class="disclaimer-heading">Disclaimer</h3>
+				<p>I can't say for sure if it's better for Etsy SEO to use all available characters in your tags or if
+					it's better to keep phrases intact. I've tested it in my own shop (Top 1% Etsy Seller without
+					selling masks) but there are simply too many variables and too many unknowns.</p>
+				<p> From reading Etsy's Guide to Search, you shouldn't use a word more than once in your tags and etsy's
+					search algorithm will put words from seperate tags together to match a query.</p>
+				<p> But since Etsy doesn't share everything about how the algorithm works, I make no guarantees or
+					promises as to the effectiveness of this tool. Use at your own risk, your mileage may vary and so
+					on.</p>
+			</div>
 		</div>
 	</div>
-	<footer>©2021 Wildbot3D®</footer>
+	<footer><span class="bugReport">©2021 Wildbot3D® || Please report bugs to <a
+				href="mailto:clint@wildbot3d.com">clint@wildbot3d.com</a>
+		</span></footer>
+	<script src=" script.js"></script>
 </body>
+
 </html>

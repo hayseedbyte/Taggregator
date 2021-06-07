@@ -2,7 +2,7 @@
   background-color: #6cc9d9;
 }
 
-img {
+.logo {
   width: 485px;
   height: 89px;
 }
@@ -37,7 +37,7 @@ img {
   grid-column: 1 / 7;
 }
 
-button {
+button.show {
   /*  text-decoration: bold;*/
   background-color: #6cc9d9;
   color: #fff;
@@ -47,6 +47,9 @@ button {
 }
 
 button.gen {
+  background-color: #6cc9d9;
+  color: #fff;
+  border-color: #d98b4c;
   font-size: 20px;
   width: 45%;
   height: 50px;
@@ -79,10 +82,14 @@ h4 {
   font-family: "Roboto", sans-serif;
 }
 
-.crypto {
+span.crypto {
   font-family: "Source Code Pro", monospace;
 }
-
+button.crypto {
+  background-color: #6cc9d9;
+  color: #fff;
+  border-color: #d98b4c;
+}
 .io {
   padding: 20px;
   display: grid;
@@ -135,4 +142,125 @@ h4 {
   img {
     max-width: 90vw;
   }
+};
+    .shown {
+      display: block;
+    }
+    .hidden {
+      display: none;
+    }
+	/* The Modal (background) */
+		#insModal {
+			position: fixed;
+			/* Stay in place */
+			z-index: 1;
+			/* Sit on top */
+			left: 0;
+			top: 0;
+			width: 75%;
+			/* Full width */
+			height: auto;
+			/* Full height */
+			overflow: auto;
+			/* Enable scroll if needed */
+			background-color: rgb(0, 0, 0);
+			/* Fallback color */
+			background-color: rgba(0, 0, 0, 0.4);
+			/* Black w/ opacity */
+			-webkit-animation-name: fadeIn;
+			/* Fade in the background */
+			-webkit-animation-duration: 0.4s;
+			animation-name: fadeIn;
+			animation-duration: 0.4s
+		}
+
+		/* Modal Content */
+		.modal-content {
+			position: fixed;
+			top: 0;
+			background-color: #fefefe;
+			width: auto;
+			height: auto;
+			-webkit-animation-name: slideIn;
+			-webkit-animation-duration: 0.4s;
+			animation-name: slideIn;
+			animation-duration: 0.4s
+		}
+
+		/* The Close Button */
+		.close {
+			color: #6cc9d9;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.modal-header {
+			padding: 2px 16px;
+			background-color: #6cc9d9;
+			color: white;
+		}
+
+		.modal-body {
+			padding: 2px 16px;
+		};
+
+
+		/* .modal-footer {
+			padding: 2px 16px;
+			background-color: #5cb85c;
+			color: white;
+		} */
+		/* Add Animation */
+		@-webkit-keyframes slideIn {
+			from {
+				top: -300px;
+				opacity: 0
+			}
+
+			to {
+				top: 0;
+				opacity: 1
+			}
+		}
+
+		@keyframes slideIn {
+			from {
+				top: -300px;
+				opacity: 0
+			}
+
+			to {
+				top: 0;
+				opacity: 1
+			}
+		}
+
+		@-webkit-keyframes fadeIn {
+			from {
+				opacity: 0
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0
+			};
+
+			to {
+				opacity: 1}}
+.bugReport {
+  float: left;
+  margin-left: 30px;
 }

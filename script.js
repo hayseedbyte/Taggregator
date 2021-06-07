@@ -152,3 +152,37 @@ function removeDuplicates(words){
     }
     return out;
 };
+// Get the modal
+const modal = document.getElementById("insModal");
+// Get the button that opens the modal
+const btn = document.getElementById("myBtn");
+// Get the <span> element that closes the modal
+const span = document.getElementsByClassName("close")[0];
+// When the user clicks the button, open the modal 
+btn.onclick = function () {
+    modal.className = "shown";
+};
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.className = "hidden";
+};
+	// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.className = "hidden";
+    }
+};
+function copyToClipboard(element) {
+	const $temp = $("<input>");
+	$("body").append($temp);
+	$temp.val($(element).text()).select();
+	document.execCommand("copy");
+	$temp.remove();
+};
+function copyOutput() {
+    const copyText = document.getElementById("output");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    document.getElementById("copyTags").innerHTML = "Copied!";
+};
