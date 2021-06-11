@@ -1,12 +1,17 @@
 .header {
   background-color: #6cc9d9;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
 }
-
 .logo {
   width: 485px;
   height: 89px;
 }
-
+.etsy-link {
+  max-width: 300px;
+  display: block;
+  margin: auto;
+}
 .container {
   display: grid;
   /* height: 100vh; */
@@ -29,7 +34,6 @@ img {
 }
 .disclaimer-container {
   background-color: lightgray;
-  border: solid 2px #80a03e;
   display: grid;
 }
 .app {
