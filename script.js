@@ -178,6 +178,23 @@ insImage.onclick = close;
 //     console.log('click');
 //   }
 // };
+
+function defaultValues() {
+  document.getElementById('input').value = '';
+  document.getElementById('output').value = '';
+  document.getElementById('wordBox').value = '';
+  document.getElementById('chars').value = 20;
+  document.getElementById('phrase').value = 13;
+  document.getElementById('unwanted').value =
+    'a|at|and|of|the|in|on|an|has|to|it|is|if|this|that|or|by|or|with';
+}
+// function eraseText() {
+//   document.getElementById('input').value = '';
+//   document.getElementById('output').value = '';
+//   document.getElementById('wordBox').value = '';
+//   document.getElementById('chars').value =
+// }
+
 function copyToClipboard(element) {
   const $temp = $('<input>');
   $('body').append($temp);

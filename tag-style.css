@@ -173,6 +173,7 @@ button.crypto {
   -webkit-animation-duration: 0.4s;
   animation-name: fadeIn;
   animation-duration: 0.4s;
+  border: 5px #6cc9d9 solid;
 }
 /* Modal Content */
 .modal-content {
@@ -210,6 +211,7 @@ button.crypto {
 
 .modal-body {
   padding: 2px 16px;
+  border: #80a03e 5px;
 }
 
 .bugReport {
@@ -217,7 +219,7 @@ button.crypto {
   margin-left: 30px;
 }
 
-.instructions-img {
+.ins-img {
   border: #80a03e 5px;
 }
 header {
