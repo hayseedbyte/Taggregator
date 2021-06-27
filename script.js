@@ -186,7 +186,7 @@ function defaultValues() {
   document.getElementById('chars').value = 20;
   document.getElementById('phrase').value = 13;
   document.getElementById('unwanted').value =
-    'a|at|and|of|the|in|on|an|has|to|it|is|if|this|that|or|by|or|with';
+    'a|at|and|of|the|in|on|an|has|to|it|is|if|this|that|or|by|for|with';
 }
 // function eraseText() {
 //   document.getElementById('input').value = '';
