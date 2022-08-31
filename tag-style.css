@@ -1,20 +1,33 @@
+:root {
+  --tag-green: #80a03e;
+  --tag-orange: #d98b4c;
+  --tag-blue: #6cc9d9;
+  --space: #476a6f;
+  --bridge: #bb4430;
+  --wb-blue: #252839;
+  --max-yellow: #f2b632;
+}
+
 .header {
   background-color: #6cc9d9;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+}
+
+.bug-report {
+  font-family: 'Cabin', sans-serif;
 }
 .logo {
   width: 485px;
   height: 89px;
 }
 .etsy-link {
-  max-width: 15vw;
+  max-width: 25vw;
   display: block;
   margin: auto;
 }
 .container {
   display: grid;
-  /* height: 100vh; */
   grid-template-columns: repeat(12, 1fr);
   column-gap: 8px;
   align-items: center;
@@ -24,30 +37,26 @@
 img {
   display: flex;
 }
-
-.donation {
+button {
+  font-family: 'Cabin', sans-serif;
+}
+.side-bar {
   grid-column: 8 / 12;
   background-color: lightgray;
   border: solid 2px #80a03e;
   height: 100%;
   padding: 20px;
 }
-.disclaimer-container {
-  background-color: lightgray;
-  display: grid;
-}
+
 .app {
   padding: 20px;
   grid-column: 1 / 7;
 }
 
 button.show {
-  /*  text-decoration: bold;*/
   background-color: #6cc9d9;
   color: #fff;
   border-color: #d98b4c;
-  /*    padding-left: 20px;
-    padding-right: 20px;*/
 }
 
 button.gen {
@@ -64,32 +73,28 @@ button.reset {
   height: 50px;
   float: right;
 }
-
-.d-text {
-  font-family: 'Lato', sans-serif;
+a {
+  color: #6cc9d9;
+}
+.instructions-list {
+  font-family: 'Telex', sans-serif;
   font-size: larger;
 }
 
-.disclaimer {
-  font-family: 'Lato', sans-serif;
+.disclaimer-container {
+  font-family: 'Telex', sans-serif;
   text-align: center;
+  background-color: lightgray;
+  display: grid;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
-span.crypto {
-  font-family: 'Source Code Pro', monospace;
-}
-button.crypto {
-  background-color: #6cc9d9;
-  color: #fff;
-  border-color: #d98b4c;
-}
 .io {
   padding: 20px;
   display: grid;
@@ -205,8 +210,6 @@ button.crypto {
 
 .modal-header {
   padding: 2px 16px;
-  /* background-color: #6cc9d9;
-  color: white; */
 }
 
 .modal-body {
@@ -228,4 +231,38 @@ header {
 .etsy-link {
   position: relative;
   left: 0px;
+}
+.copyright {
+  color: white;
+  justify-content: flex-start;
+  padding-right: 30px;
+}
+.bottom-nav::before {
+  content: '||';
+  color: white;
+}
+.bottom-nav a {
+  text-decoration: none;
+  padding: 15px;
+  color: white;
+}
+
+.bottom-nav a:hover {
+  color: var(--tag-green);
+}
+.footer {
+  background: var(--tag-blue);
+  /* width: 90vw; */
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: auto;
+}
+.etsy-copyright {
+  font-family: 'Cabin', sans-serif;
+}
+.ppDonate {
+  display: flex;
+  justify-content: center;
+  padding: 10vh;
 }

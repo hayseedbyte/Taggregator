@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="tag-style.css">
 	<link rel="shortcut icon" type="image/jpg" href="favicon.png" />
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&family=Source+Code+Pro&display=swap"
 		rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6cc9d9">
+	<meta name="apple-mobile-web-app-title" content="Taggregator">
+	<meta name="application-name" content="Taggregator">
+	<meta name="msapplication-TileColor" content="#6cc9d9">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
 	<title>Etsy Tag Aggregator for Etsy Sellers</title>
-	<meta name="description" content="Tool for Etsy sellers to get the most out of the available tags on their Etsy listings. Simply paste in the keywords you want to use and Taggregator will remove duplicates and find the best way to fit all the words into the 13 available tags.">
+	<meta name="description" content="Tool for Etsy sellers to get the most out of the available tags on their Etsy listings.">
  	<meta name="keywords" content="etsy seller tools, etsy tag generator, etsy seo, etsy keywords, etsy listing">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -22,21 +31,29 @@
 		
   		gtag('config', 'G-XWN14CLFKF');
 	</script>
-	<!-- <script src="modal-script.js"></script> -->
-	<!-- <link rel="stylesheet" type="text/css" href="modal-style.css"> -->
-</head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cabin&family=Oswald:wght@700&family=Telex&display=swap" rel="stylesheet">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WEYGN496CM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-WEYGN496CM');
+</script>
+</head>
 <body>
 	<div class="header">
-		<img class="logo" src="taggregator.png">
-		
+		<img class="logo" src="taggregator.png" alt="taggregator logo">
 	</div>
 	<div class="container">
 		<div class="app">
 			<h1>Etsy Keyword/Tag Aggregator</h1>
 			<h3>Instructions</h3>
 			<!-- Trigger/Open The Modal -->
-			<button id="myBtn" class="show">Show Me!</button>
+			<button id="shwBtn" class="show">Show Me!</button>
 			<!-- The Modal -->
 			<div id="insModal" class="hidden">
 				<div class="modal-content">
@@ -44,14 +61,14 @@
 						<span class="close">&times;</span>
 					</div>
 					<div class="modal-body">
-						<img id="ins-img" class="instructions-img" src="unused2.jpg" alt="Usage intructions">
+						<img id="ins-img" class="instructions-img" src="unused2.jpg" alt="Paste keywords in Keywords box and press Generate. Tags will appear in Tags box. Words that wouldn't fit will appear in Unused box.">
 					</div>
 				</div>
 			</div>
 			<p class="d-text">
-			<ul>
-				<li>Put your search terms in the "Keywords" box, one per line.</li>
-				<li>Put how many tags you want and how many characters each tag can be. </li>
+			<ul class="instructions-list">
+				<li>Put your search terms in the "Keywords" box, one per line. <strong>HINT: I use <a id="aff_link" href="https://www.keywordtooldominator.com/?ktd=1691" target="_blank" rel="sponsored">this tool</a> to find good search terms for my listings.</strong></li>
+				<li>Put how many tags you want and how many characters each tag can be. For Etsy, this will be 13 tags and 20 characters. </li>
 				<li>Click "Generate" and your optimized tags will show up in the Tags box. </li>
 				<li>If there are words left over that could not fit, they'll be displayed in the "Unused Words" box.
 				</li>
@@ -101,54 +118,42 @@
 				</div>
 			</div>
 		</div>
-		<div class="donation">
-			<h3>Donations</h3>
-			<hr>
-			<p>This tool is free for anyone to use (even though some of you might be my competition ( ಠ_ಠ) ), no ads, no
-				email popups, no tracking cookies. If you find value here and would like to make a small donation, you
-				can do so below. Thanks so much!</p>
-			<h4>Crypto donations can be made to the following addresses:</h4>
-			<strong>BTC: </strong><span name="BTC" id="BTC" class="crypto">
-				bc1q3jq3x8nllcnk560tg2hfsyg0chc87fsk6n6700</span>
-			<button class="crypto" type="button" onclick="copyToClipboard('#BTC')">Copy</button>
-			<br>
-			<strong>LTC: </strong><span name="LTC" id="LTC" class="crypto">
-				ltc1q0q5e3wgnlp6qnmvkxg9ytvmgjc2au87n0nj9x5</span>
-			<button class="crypto" type="button" onclick="copyToClipboard('#LTC')">Copy</button>
-			<br>
-			<strong>ETH: </strong><span name="ETH" id="ETH" class="crypto">
-				0x4d6437C33B3fE0B05cb0E8A601E10824EbD4c5ca</span>
-			<button class="crypto" type="button" onclick="copyToClipboard('#ETH')">Copy</button>
-			<br>
-			<strong>DOGE: </strong><span name="DOGE" id="DOGE" class="crypto"> DDWtVtqNnacVorew1kMyAATLTXeNqVsJUS</span>
-			<button class="crypto" type="button" onclick="copyToClipboard('#DOGE')">Copy</button>
-			<br>
-			<br>
-			<h4>Or use the button below to donate through PayPal:</h4>
-			<form action="https://www.paypal.com/donate" method="post" target="_top">
-				<input type="hidden" name="hosted_button_id" value="ZTSSWJZQ3U9JN" />
-				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0"
-					name="submit" title="PayPal - The safer, easier way to pay online!"
-					alt="Donate with PayPal button" />
-				<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-			</form>
-			<hr>
+		<div class="side-bar">
 			<div class="disclaimer-container"> <h3 class="disclaimer-heading">Disclaimer</h3>
+				<p>This tool is free for anyone to use (even though some of you might be my competition ( ಠ_ಠ) ), no ads, no
+				email popups, no tracking cookies.</p>
 				<p>I can't say for sure if it's better for Etsy SEO to use all available characters in your tags or if
 					it's better to keep phrases intact. I've tested it in my own shop (Top 1% Etsy Seller without
 					selling masks) but there are simply too many variables and too many unknowns.</p>
 				<p> From reading Etsy's Guide to Search, you shouldn't use a word more than once in your tags and etsy's
-					search algorithm will put words from seperate tags together to match a query.</p>
+					search algorithm will put words from separate tags together to match a query.</p>
 				<p> But since Etsy doesn't share everything about how the algorithm works, I make no guarantees or
-					promises as to the effectiveness of this tool. Use at your own risk, your mileage may vary and so
-					on.</p>
-			</div>
-			<div><a href="https://etsy.me/3xe0iXX"><img src="sell-on-etsy.png" alt="sell on etsy gator" class="etsy-link"></a></div>
+					promises as to the effectiveness of this tool. Use at your own risk, not a doctor, your mileage may vary, not financial advice and so on.</p>
+					
+					<p>The term 'Etsy' is a trademark of Etsy, Inc. This application is not
+					endorsed or certified by Etsy, Inc.</p>
+				</div>
+      
+			<div><a href="https://www.keywordtooldominator.com/?ktd=1691" target="_blank" rel="sponsored" id="aff_link"><img src="keywords.gif" alt="find etsy keywords" class="etsy-link"> </a></div>
 		</div>
 	</div>
-	<footer><span class="bugReport">©2021 Wildbot3D® || Please report bugs to <a
-				href="mailto:clint@wildbot3d.com">clint@wildbot3d.com</a>
-		</span></footer>
+	<footer>   
+	<div class="footer">
+     <div class="copyright">
+    &copy;2021 -
+    <script>
+      document.write(new Date().getFullYear());
+    </script>
+    Wilbot3D&reg;
+  </div>
+      <div class="bottom-nav">
+        <a href="https://wildbot.app">HOME</a
+        ><a href="https://wildbot.app/sales-map">SALES MAP</a
+        ><a href="https://wildbot.app/taggregator">TAGGREGATOR</a>
+      </div>
+
+    </div>
+</footer>
 	<script src=" script.js"></script>
 </body>
 
